@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GREEN STUDIO | 呼吸する植物の空間で撮るウエディングフォト</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Klee+One&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green:#3d5a3e;
+  --green-light:#6b8f6c;
+  --cream:#fffefb;
+  --warm-white:#f7f5f0;
+  --text:#2a2a2a;
+  --text-light:#5a5a5a;
+  --text-caption:#3a3a3a;
+  --gold:#b8976a;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Klee One',cursive;
+  background:var(--cream);
+  color:var(--text);
+  line-height:1.8;
+  overflow-x:hidden;
+}
+
+/* ── FLOATING CTA ── */
+.floating-cta{
+  position:fixed;
+  bottom:24px;
+  right:20px;
+  z-index:9999;
+  background:var(--green);
+  color:#fff;
+  font-family:'EB Garamond',serif;
+  font-size:12px;
+  letter-spacing:0.18em;
+  text-decoration:none;
+  padding:14px 22px;
+  box-shadow:0 4px 20px rgba(61,90,62,0.38);
+  transition:background 0.3s,transform 0.2s;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  border-radius:2px;
+  white-space:nowrap;
+}
+.floating-cta::before{
+  content:'';
+  display:inline-block;
+  width:16px;height:16px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white' stroke-width='1.5'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+.floating-cta:hover{background:#2e4430;transform:translateY(-2px)}
+
+/* ── HERO ── */
+.hero{
+  position:relative;
+  width:100%;
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  overflow:hidden;
+}
+.hero-img{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center top;
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.15) 50%, transparent 100%);
+}
+.hero-logo{
+  position:absolute;
+  top:28px;
+  left:28px;
+  z-index:10;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#fff;
+  text-decoration:none;
+}
+/* ロゴ画像 */
+.hero-logo-img{
+  width:160px;
+  height:auto;
+  display:block;
+}
+.hero-text{
+  position:relative;z-index:2;
+  padding:0 28px 52px;
+  color:#fff;
+}
+.hero-sub{
+  font-family:'EB Garamond',serif;
+  font-style:italic;
+  font-size:13px;
+  letter-spacing:0.15em;
+  margin-bottom:12px;
+  opacity:0.85;
+}
+.hero-main{
+  font-family:'Klee One',cursive;
+  font-size:clamp(22px,6vw,34px);
+  font-weight:400;
+  line-height:1.65;
+  letter-spacing:0.08em;
+  text-shadow:0 1px 12px rgba(0,0,0,0.2);
+}
+.hero-cta{
+  margin-top:32px;
+  display:inline-block;
+  padding:15px 38px;
+  border:1px solid rgba(255,255,255,0.8);
+  color:#fff;
+  font-family:'EB Garamond',serif;
+  font-size:13px;
+  letter-spacing:0.2em;
+  text-decoration:none;
+  transition:all 0.3s ease;
+  backdrop-filter:blur(4px);
+  background:rgba(255,255,255,0.1);
+}
+.hero-cta:hover{background:rgba(255,255,255,0.22)}
+
+/* ── SECTION BASE ── */
+section{padding:72px 0}
+.sec-inner{max-width:560px;margin:0 auto;padding:0 24px}
+
+/* ── CONCEPT INTRO ── */
+.concept-intro{
+  background:var(--warm-white);
+  text-align:center;
+}
+.concept-intro p{
+  font-size:15px;
+  line-height:2.2;
+  color:var(--text-light);
+  margin-bottom:16px;
+}
+.concept-intro p strong{
+  color:var(--text);
+  font-weight:400;
+}
+.concept-catchphrase{
+  font-size:clamp(17px,4.5vw,22px);
+  color:var(--green);
+  margin:32px 0 8px;
+  letter-spacing:0.05em;
+}
+
+/* ── FOR THIS COUPLE ── */
+.for-couple{text-align:center}
+.sec-title{
+  font-family:'EB Garamond',serif;
+  font-size:11px;
+  letter-spacing:0.3em;
+  color:var(--text-light);
+  margin-bottom:8px;
+  text-transform:uppercase;
+}
+.for-couple-lead{
+  font-size:clamp(18px,5vw,24px);
+  margin-bottom:32px;
+  line-height:1.8;
+}
+.for-item{
+  font-size:15px;
+  color:var(--text-light);
+  margin:12px 0;
+  line-height:1.9;
+}
+.for-item strong{
+  display:block;
+  font-size:17px;
+  color:var(--text);
+  font-weight:400;
+  margin-bottom:4px;
+}
+
+/* ── STORY ── */
+.story-block{padding:0}
+.story-item{margin-bottom:0}
+.story-photo{width:100%;display:block}
+.story-photo img{width:100%;display:block;object-fit:cover}
+.story-photo.full img{height:min(90vw,560px);object-position:center}
+.story-photo.half-right{width:78%;margin-left:auto}
+.story-photo.half-left{width:78%;margin-right:auto}
+.story-caption{
+  padding:20px 28px;
+  font-size:14px;
+  color:var(--text-caption);
+  letter-spacing:0.05em;
+  line-height:2;
+}
+.story-caption.right{text-align:right}
+.story-caption.center{text-align:center}
+
+/* ── CONCEPT (GREEN STUDIO にあるもの) ── */
+.concept-section{background:#1e2e1f;color:#fff}
+.concept-section .sec-inner{text-align:center}
+.concept-top-img{
+  width:100%;height:340px;
+  object-fit:cover;object-position:center;
+  display:block;margin-bottom:0;
+}
+.concept-dark-text{padding:48px 24px;text-align:center}
+.concept-dark-text .gs-name{
+  font-family:'EB Garamond',serif;
+  font-size:clamp(18px,5vw,24px);
+  letter-spacing:0.2em;margin-bottom:24px;opacity:0.95;
+}
+.concept-dark-text .here{
+  font-size:11px;letter-spacing:0.3em;opacity:0.6;
+  margin-bottom:16px;text-transform:uppercase;font-family:'EB Garamond',serif;
+}
+.concept-three{display:flex;flex-direction:column;gap:4px;margin:0 0 36px}
+.concept-three span{font-size:clamp(22px,6vw,30px);letter-spacing:0.15em;opacity:0.9}
+.concept-body{font-size:14px;line-height:2.2;opacity:0.8;max-width:340px;margin:0 auto}
+.concept-items{padding:0 24px 48px;max-width:560px;margin:0 auto}
+.concept-item{margin-bottom:52px}
+.concept-item-img{
+  width:100%;display:block;margin-bottom:20px;
+  object-fit:cover;
+}
+/* ドレス写真：縦型トリミング */
+.concept-item.dress-item .concept-item-img{
+  height:min(100vw,440px);
+  object-position:center top;
+}
+
+.concept-item.leaf-item .concept-item-img{
+  height:240px;
+  object-position:center;
+}
+.concept-item.flower-item .concept-item-img{
+  height:240px;
+  object-position:center;
+}
+.concept-item-label{
+  font-family:'EB Garamond',serif;
+  font-size:18px;letter-spacing:0.15em;
+  color:rgba(255,255,255,0.9);margin-bottom:8px;
+}
+.concept-item-text{font-size:13px;line-height:2.1;color:rgba(255,255,255,0.65)}
+/* ドレスカタログリンク */
+.catalog-link{
+  display:inline-block;
+  margin-top:14px;
+  font-family:'EB Garamond',serif;
+  font-size:12px;
+  letter-spacing:0.18em;
+  color:rgba(255,255,255,0.5);
+  text-decoration:none;
+  border-bottom:1px solid rgba(255,255,255,0.2);
+  padding-bottom:2px;
+  transition:color 0.2s,border-color 0.2s;
+}
+.catalog-link:hover{color:rgba(255,255,255,0.9);border-color:rgba(255,255,255,0.6)}
+
+/* ── DRESS ── */
+.dress-section{background:var(--warm-white)}
+.dress-section .sec-inner{text-align:center}
+.dress-title{
+  font-family:'EB Garamond',serif;
+  font-size:18px;letter-spacing:0.15em;
+  margin-bottom:8px;color:var(--text);
+}
+.dress-sub{font-size:13px;color:var(--text-light);margin-bottom:32px;line-height:1.9}
+.dress-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:12px;margin-bottom:16px;
+}
+.dress-grid img{
+  width:100%;
+  object-fit:cover;object-position:center top;display:block;
+}
+.dress-full img{
+  width:100%;height:320px;
+  object-fit:cover;object-position:center top;
+  display:block;margin-bottom:16px;
+}
+.dress-link{
+  font-family:'EB Garamond',serif;
+  font-size:13px;letter-spacing:0.2em;
+  color:var(--text-light);text-decoration:none;
+  border-bottom:1px solid var(--text-light);
+  padding-bottom:2px;
+}
+
+/* ── GALLERY ── */
+.gallery-section{background:var(--cream)}
+.gallery-title{
+  font-family:'EB Garamond',serif;
+  font-size:clamp(20px,5vw,28px);
+  letter-spacing:0.2em;
+  text-align:center;
+  margin-bottom:36px;
+  color:var(--text);
+}
+.gallery-grid{display:grid;gap:6px;padding:0 16px}
+.gallery-grid img{width:100%;display:block;object-fit:cover}
+.g-full{height:300px;object-position:center top}
+.g-row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
+.g-row3 img{height:260px}
+.g-row2{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px}
+.g-row2 img{height:320px}
+
+/* ── PLAN ── */
+.plan-section{background:#f5f3ee}
+.plan-title{
+  font-family:'EB Garamond',serif;
+  font-size:clamp(20px,5vw,28px);
+  letter-spacing:0.2em;
+  text-align:center;
+  margin-bottom:48px;
+  color:var(--text);
+}
+.plan-card{
+  background:#fff;
+  margin-bottom:32px;
+  overflow:hidden;
+  position:relative;
+}
+/* 写真ラッパー（バッジ重ねるため） */
+.plan-card-img-wrap{
+  position:relative;
+  overflow:hidden;
+}
+.plan-card-img-wrap img{
+  width:100%;height:520px;
+  object-fit:cover;object-position:center top;
+  display:block;
+}
+/* 「今だけ ¥20,000引き」バッジ */
+.plan-discount-badge{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:flex-end;
+  justify-content:flex-end;
+  padding:6px;
+  pointer-events:none;
+}
+.plan-discount-badge span{
+  background:rgba(61,90,62,0.72);
+  color:#fff;
+  font-family:'EB Garamond',serif;
+  font-size:16px;
+  letter-spacing:0.12em;
+  padding:6px 12px;
+  text-align:center;
+  line-height:1.7;
+  backdrop-filter:blur(3px);
+}
+.plan-discount-badge span em{
+  font-style:normal;
+  font-size:1.1em;
+}
+.plan-card-body{padding:28px 24px}
+.plan-card-name{
+  font-size:15px;letter-spacing:0.1em;margin-bottom:12px;
+  color:var(--text-light);font-family:'EB Garamond',serif;
+}
+.plan-card-desc{font-size:13px;color:var(--text-light);margin-bottom:20px;line-height:2}
+.plan-price-block{margin-bottom:16px}
+.plan-price{
+  font-family:'EB Garamond',serif;
+  font-size:clamp(22px,6vw,28px);
+  color:var(--text);
+  letter-spacing:0.05em;
+  display:block;
+}
+/* 割引前価格（打消し線） */
+.plan-price-original{
+  display:inline-block;
+  font-family:'EB Garamond',serif;
+  font-size:14px;
+  color:var(--text-light);
+  text-decoration:line-through;
+  text-decoration-color:var(--text-light);
+  margin-top:4px;
+  letter-spacing:0.05em;
+}
+.plan-discount-label{
+  display:inline-block;
+  font-size:11px;
+  color:#fff;
+  background:var(--green-light);
+  padding:1px 7px;
+  border-radius:2px;
+  margin-left:6px;
+  letter-spacing:0.05em;
+  vertical-align:middle;
+}
+/* プラン含有アイテム（○→SVGアイコン） */
+.plan-includes{
+  font-size:13px;
+  color:var(--text-light);
+  line-height:1;
+  margin-bottom:16px;
+}
+.plan-include-item{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  padding:7px 0;
+  border-bottom:1px solid #f0ede8;
+  font-size:13px;
+  color:var(--text);
+}
+.plan-include-item:last-of-type{border-bottom:none}
+.plan-include-icon{
+  flex-shrink:0;
+  width:18px;height:18px;
+  color:var(--green-light);
+}
+.plan-all-note{
+  font-size:11px;
+  color:var(--text-light);
+  margin-top:10px;
+  padding-top:10px;
+  border-top:1px solid #e8e4dc;
+  letter-spacing:0.03em;
+}
+.plan-note{
+  font-size:11px;color:var(--text-light);letter-spacing:0.05em;
+  padding-top:12px;border-top:1px solid #eee;
+}
+
+/* ── VOICE ── */
+.voice-section{background:var(--warm-white)}
+.voice-title{
+  font-family:'EB Garamond',serif;
+  font-size:clamp(20px,5vw,26px);
+  letter-spacing:0.2em;
+  text-align:center;
+  margin-bottom:8px;
+}
+.voice-sub{
+  text-align:center;font-size:11px;letter-spacing:0.2em;
+  opacity:0.55;margin-bottom:40px;font-family:'EB Garamond',serif;
+}
+.voice-card{
+  background:#fff;
+  padding:24px;
+  margin-bottom:16px;
+  border-left:2px solid var(--green-light);
+}
+.voice-card-title{font-size:18px;font-weight:400;margin-bottom:10px;color:var(--text)}
+.voice-card-text{font-size:13px;color:var(--text-light);line-height:2.1}
+.voice-card-from{
+  text-align:right;font-size:11px;color:var(--text-light);
+  margin-top:14px;font-family:'EB Garamond',serif;letter-spacing:0.1em;
+}
+
+/* ── TIME SCHEDULE ── */
+.schedule-section{background:var(--cream)}
+.schedule-title{
+  font-family:'EB Garamond',serif;
+  font-size:clamp(18px,5vw,24px);
+  letter-spacing:0.2em;
+  text-align:center;
+  margin-bottom:4px;
+  color:var(--text);
+}
+.schedule-sub{
+  text-align:center;font-size:11px;letter-spacing:0.25em;
+  color:var(--text-light);margin-bottom:44px;font-family:'EB Garamond',serif;
+}
+.schedule-steps{
+  position:relative;
+  padding-left:0;
+}
+/* 縦ライン */
+.schedule-steps::before{
+  content:'';
+  position:absolute;
+  left:28px;top:0;bottom:0;
+  width:1px;
+  background:linear-gradient(to bottom,var(--green-light),rgba(107,143,108,0.1));
+}
+.schedule-step{
+  display:flex;
+  align-items:flex-start;
+  gap:18px;
+  margin-bottom:36px;
+  position:relative;
+}
+.schedule-step:last-child{margin-bottom:0}
+.schedule-step-num{
+  width:56px;height:56px;
+  border-radius:50%;
+  background:var(--green);
+  color:#fff;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  flex-shrink:0;
+  position:relative;z-index:1;
+  font-family:'EB Garamond',serif;
+}
+.schedule-step-num span{font-size:9px;letter-spacing:0.15em;opacity:0.75;line-height:1}
+.schedule-step-num strong{font-size:18px;line-height:1.2}
+.schedule-step-body{padding-top:8px}
+.schedule-step-body h3{font-size:15px;color:var(--text);margin-bottom:4px;letter-spacing:0.05em}
+.schedule-step-body p{font-size:13px;color:var(--text-light);line-height:1.9}
+.schedule-time{
+  font-family:'EB Garamond',serif;
+  font-size:11px;letter-spacing:0.15em;
+  color:var(--green-light);margin-bottom:4px;
+}
+
+/* ── FLOW ── */
+.flow-section{background:var(--warm-white)}
+.flow-title{
+  font-family:'EB Garamond',serif;
+  font-size:clamp(20px,5vw,26px);
+  letter-spacing:0.2em;
+  text-align:center;
+  margin-bottom:8px;
+}
+.flow-sub{text-align:center;font-size:12px;color:var(--text-light);margin-bottom:40px;letter-spacing:0.1em}
+.flow-item{
+  display:flex;
+  gap:18px;
+  align-items:flex-start;
+  margin-bottom:32px;
+  padding-bottom:32px;
+  border-bottom:1px solid #e8e4dc;
+}
+
+.flow-icon-wrap{
+  flex-shrink:0;
+  width:18%;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+}
+/* 仮アイコン（画像差し替え時はimgタグをこのdivの中に入れてください） */
+.flow-icon-placeholder{
+  font-family:'EB Garamond',serif;
+  font-size:11px;
+  color:var(--green-light);
+  letter-spacing:0.05em;
+  text-align:center;
+  line-height:1.2;
+}
+.flow-icon-wrap img{width:100%;height:100%;object-fit:cover}
+.flow-num{
+  font-family:'EB Garamond',serif;
+  font-size:28px;
+  color:var(--green-light);
+  line-height:3;
+  min-width:28px;
+  padding-top:4px;
+}
+.flow-content h3{font-size:15px;margin-bottom:6px;letter-spacing:0.05em}
+.flow-content p{font-size:13px;color:var(--text-light);line-height:1.9}
+
+/* ── Q&A ── */
+.qa-section{background:var(--cream)}
+.qa-title{
+  font-family:'EB Garamond',serif;
+  font-size:clamp(20px,5vw,26px);
+  letter-spacing:0.2em;
+  text-align:center;
+  margin-bottom:8px;
+}
+.qa-sub{text-align:center;font-size:12px;color:var(--text-light);margin-bottom:40px;letter-spacing:0.1em}
+.qa-item{margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid #e8e4dc}
+.qa-item:last-child{border-bottom:none}
+.qa-q{font-size:15px;margin-bottom:10px;letter-spacing:0.03em}
+.qa-q span{color:var(--green);margin-right:10px;font-family:'EB Garamond',serif}
+.qa-a{font-size:13px;color:var(--text-light);line-height:2;padding-left:22px}
+
+/* ── ACCESS ── */
+.access-section{background:#1e2e1f;color:#fff}
+.access-title{
+  font-family:'EB Garamond',serif;
+  font-size:clamp(20px,5vw,26px);
+  letter-spacing:0.3em;text-align:center;margin-bottom:8px;
+}
+.access-sub{text-align:center;font-size:11px;letter-spacing:0.2em;opacity:0.6;margin-bottom:36px;font-family:'EB Garamond',serif}
+.access-name{font-family:'EB Garamond',serif;font-size:16px;letter-spacing:0.15em;margin-bottom:20px;opacity:0.9}
+.access-info{font-size:13px;line-height:2.2;opacity:0.75;margin-bottom:28px}
+.access-map{width:100%;height:200px;border:none;filter:grayscale(0.3) contrast(0.9);display:block}
+
+/* ── CTA FINAL ── */
+.cta-section{background:var(--green);padding:80px 24px;text-align:center}
+.cta-section h2{
+  color:#fff;font-size:clamp(18px,5vw,24px);font-weight:400;
+  line-height:1.8;margin-bottom:12px;letter-spacing:0.06em;
+}
+.cta-section p{color:rgba(255,255,255,0.75);font-size:13px;margin-bottom:36px;line-height:2}
+.cta-btn{
+  display:inline-block;padding:18px 52px;
+  background:#fff;color:var(--green);
+  font-family:'EB Garamond',serif;font-size:14px;
+  letter-spacing:0.2em;text-decoration:none;
+  transition:all 0.3s;margin-bottom:20px;
+}
+.cta-btn:hover{background:var(--cream)}
+.cta-ig{
+  display:block;color:rgba(255,255,255,0.7);
+  font-family:'EB Garamond',serif;font-size:12px;
+  letter-spacing:0.2em;text-decoration:none;margin-top:16px;
+}
+.cta-ig:hover{color:#fff}
+
+/* ── FOOTER ── */
+footer{
+  background:#111;color:rgba(255,255,255,0.4);
+  text-align:center;padding:28px 24px;
+  font-family:'EB Garamond',serif;font-size:11px;letter-spacing:0.15em;
+}
+
+/* ════════════════════════════════════════
+   PC RESPONSIVE  (min-width: 768px)
+════════════════════════════════════════ */
+@media(min-width:768px){
+  .sec-inner{max-width:800px}
+  .concept-items{max-width:800px}
+
+  /* Hero */
+  .hero-text{padding:0 60px 72px}
+  .hero-logo{top:36px;left:48px}
+  .hero-logo-img{width:200px}
+  .hero-img{object-position:center center}
+
+  /* Story — PC は横並び2カラムグリッドに */
+  .story-block{display:grid;grid-template-columns:1fr 1fr}
+  .story-photo.full{grid-column:1/-1}
+  .story-photo.full img{height:560px}
+  .story-photo.half-right,.story-photo.half-left{width:100%;margin:0}
+
+  /* Concept items 横並び */
+  .concept-items-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:32px;
+  }
+  .concept-item{margin-bottom:0}
+
+  /* Gallery */
+  .gallery-grid{max-width:800px;margin:0 auto}
+  .g-full{height:400px}
+  .g-row3 img{height:200px}
+  .g-row2 img{height:280px}
+
+  /* Plan — 2カラム並列 */
+  .plan-cards-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:24px;
+  }
+  .plan-card{margin-bottom:0}
+
+  /* Voice — 2カラム */
+  .voice-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:16px;
+  }
+  .voice-card{margin-bottom:0}
+
+  /* Schedule */
+  .schedule-steps::before{left:34px}
+  .schedule-step-num{width:68px;height:68px}
+
+  /* Flow — 2カラム */
+  .flow-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 32px}
+  .flow-item{padding-bottom:28px}
+
+  /* Floating CTA */
+  .floating-cta{bottom:32px;right:32px;font-size:13px;padding:16px 28px}
+
+  /* Access map taller */
+  .access-map{height:300px}
+}
+
+/* ── LIGHTBOX ── */
+.gallery-grid img{cursor:pointer;transition:opacity 0.2s}
+.gallery-grid img:hover{opacity:0.88}
+#lb-overlay{
+  display:none;
+  position:fixed;inset:0;
+  z-index:99999;
+  background:rgba(0,0,0,0.88);
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+#lb-overlay.is-open{display:flex}
+#lb-img{
+  max-width:100%;
+  max-height:90svh;
+  object-fit:contain;
+  border-radius:2px;
+  box-shadow:0 8px 48px rgba(0,0,0,0.5);
+  display:block;
+}
+#lb-close{
+  position:fixed;
+  top:16px;right:20px;
+  width:44px;height:44px;
+  display:flex;align-items:center;justify-content:center;
+  background:none;border:none;cursor:pointer;
+  color:#fff;font-size:32px;line-height:1;
+  opacity:0.8;transition:opacity 0.2s;
+}
+#lb-close:hover{opacity:1}
+#lb-prev,#lb-next{
+  position:fixed;
+  top:50%;transform:translateY(-50%);
+  background:none;border:none;cursor:pointer;
+  color:#fff;font-size:36px;line-height:1;
+  opacity:0.7;transition:opacity 0.2s;
+  padding:16px;
+  user-select:none;
+}
+#lb-prev:hover,#lb-next:hover{opacity:1}
+#lb-prev{left:8px}
+#lb-next{right:8px}
+@media(min-width:768px){
+  #lb-prev{left:24px}
+  #lb-next{right:24px}
+}
+</style>
+</head>
+<body>
+
+<!-- 常時追従 予約ボタン -->
+<a href="https://green-studio.resv.jp/" class="floating-cta" target="_blank">ご予約はこちら</a>
+
+<!-- HERO -->
+<section class="hero">
+  <picture>
+    <source media="(min-width:768px)" srcset="image/01_02.jpg">
+    <img class="hero-img" src="image/01.jpg" alt="GREEN STUDIO ウエディングフォト">
+  </picture>
+  <div class="hero-overlay"></div>
+
+  <!-- ロゴ -->
+  <a href="#" class="hero-logo">
+    <img src="image/logo-white.svg" alt="GREEN STUDIO" class="hero-logo-img">
+  </a>
+
+  <div class="hero-text">
+    <p class="hero-sub">breathing green wedding photo</p>
+    <h1 class="hero-main">呼吸する植物の空間で撮る<br>ウエディングフォト</h1>
+    <a href="https://green-studio.resv.jp/" class="hero-cta" target="_blank">見学のご予約はこちら</a>
+  </div>
+</section>
+
+<!-- CONCEPT INTRO -->
+<section class="concept-intro">
+  <div class="sec-inner">
+    <p>植物があるからこそ<br>生まれる時間があります。</p>
+    <p>光がやわらぎ、少し肩の力が抜けていく。</p>
+    <p><strong>GREEN STUDIO</strong> は<br>植物を<em>"背景"</em>としてではなく<br>人が自然にいられる空気をつくる存在として
+大切にしています。</p>
+    <p class="concept-catchphrase">『ウエディングフォト、どこで撮ろう』</p>
+  </div>
+</section>
+
+<!-- FOR THIS COUPLE -->
+<section class="for-couple" style="background:var(--cream)">
+  <div class="sec-inner">
+    <p class="sec-title">for you</p>
+    <h2 class="for-couple-lead">こんなふたりへ</h2>
+    <div class="for-item">
+      <strong>緑や自然が好き</strong>
+    </div>
+    <div class="for-item">
+      <strong>「はい、笑って」より<br>いつものふたりで<br>自然な表情を残したい</strong>
+    </div>
+    <div class="for-item">
+      <strong>写真が少し苦手でも
+そのままで、大丈夫です。</strong>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story-block" style="background:var(--cream);padding:48px 0 0">
+  <div class="story-item">
+    <div class="story-photo full">
+       <img src="image/02.jpg"" width="" height="" border="0">  </div>
+    <p class="story-caption">西陽がきれいで</p>
+  </div>
+  <div class="story-item">
+    <div class="story-photo half-right">
+      <img src="image/03.jpg" alt="" width="" height="" border="0">  </div>
+    <p class="story-caption right">会話を楽しんだり</p>
+  </div>
+  <div class="story-item">
+    <div class="story-photo half-left">
+       <img src="image/04.jpg" alt="" width="" height="" border="0">    </div>
+    <p class="story-caption">呼吸する植物の空間は<br>少し肩の力が抜けて</p>
+  </div>
+  <div class="story-item">
+    <div class="story-photo full">
+       <img src="image/05.jpg" alt="" width="" height="" border="0">    </div>
+    <p class="story-caption center">気づけば、いつものふたりだった</p>
+  </div>
+  <div class="story-item">
+    <div class="story-photo half-left">
+       <img src="image/06.jpg" alt="" width="" height="" border="0">    </div>
+    <p class="story-caption">植物と光に囲まれて</p>
+  </div>
+  <div class="story-item">
+    <div class="story-photo half-right">
+      <img src="image/07.jpg" alt="" width="" height="" border="0">    </div>
+    <p class="story-caption right">私らしく自然で</p>
+  </div>
+  <div class="story-item">
+    <div class="story-photo full">
+      <img src="image/08.jpg" alt="" width="" height="" border="0">
+    </div>
+    <p class="story-caption center">写真が少し苦手でも
+そのままで、大丈夫です。だった</p>
+  </div>
+</section>
+<br>
+<br>
+<!-- CONCEPT: この場所にあるもの -->
+<section class="concept-section">
+   <div class="concept-item leaf-item">
+<img class="concept-item-img" src="image/09.jpg" alt="ブーケ">
+   </div> 
+  <div class="concept-dark-text">
+    <p class="gs-name">GREEN STUDIO</p>
+    <p class="here">what we have here</p>
+    <div class="concept-three">
+      <span>空気</span>
+      <span>光</span>
+      <span>植物</span>
+    </div>
+    <p class="concept-body">小さな温もりが生まれる場所<br><br>本物の植物と自然光の空間で、<br>カメラとふたりの間に流れる空気を大切に<br>撮影しています。</p>
+  </div>
+  <div class="concept-items">
+    <div class="concept-items-grid">
+      <div class="concept-item flower-item">
+        <img class="concept-item-img" src="image/10.jpg" alt="ブーケ">
+        <p class="concept-item-label">花を添える</p>
+        <p class="concept-item-text">
+          お支度が整い、<br>最後に合わせるブーケ。<br>その一つで、<br>写真の空気は大きく変わります。<br>だからこそ、<br>一人一人に合わせて<br>花をご提案しています。
+        </p>
+      </div>
+      <div class="concept-item dress-item">
+        <img class="concept-item-img" src="image/11.jpg" alt="ウエディングドレス">
+        <p class="concept-item-label">装いを選ぶ</p>
+        <p class="concept-item-text">好きなものを選ぶことも<br>心地よく過ごせることも大切に。<br>この場所の光や植物の中で<br>自然と馴染む衣裳を<br>揃えています。</p>
+        <!-- ドレスカタログリンク -->
+        <a href="https://green-studio.resv.jp/catalog/" class="catalog-link" target="_blank">ドレスカタログはこちら →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DRESS -->
+<section class="dress-section">
+  <div class="sec-inner">
+    <p class="sec-title">dress collection</p>
+    <h2 class="dress-title">整える時間</h2>
+    <p class="dress-sub">撮影の日を迎える前に。<br>提携サロンでご利用いただける<br>ブライダルエステの特典をご用意しています。<br><br>撮影当日はフェイスマッサージから始まり<br>ゆっくりと気持ちを整えながら<br>ヘアメイクを進めていきます。<br>大切な一日のはじまりです。</p>
+    <div class="dress-full">
+   <img src="image/totonoeru01.jpg" alt="" width="" height="" border="0">
+    </div>
+    <div class="dress-grid">
+      <img src="image/totonoeru02.jpg" alt="" width="" height="" border="0">
+        <img src="image/totonoeru03.jpg" alt="" width="" height="" border="0">
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section">
+  <div class="sec-inner" style="padding:0 24px">
+    <h2 class="gallery-title">Photo Gallery</h2>
+  </div>
+  <div class="gallery-grid" style="max-width:480px;margin:0 auto">
+  <img src="image/gallery01.jpg" alt="" width="" height="" border="">
+    <div class="g-row3">
+       <img src="image/gallery02.jpg" alt="" width="" height="" border="0">
+         <img src="image/gallery03.jpg" alt="" width="" height="" border="0">
+           <img src="image/gallery04.jpg" alt="" width="" height="" border="0">
+    </div>
+    <div class="g-row2">
+      <img src="image/gallery05.jpg" alt="" width="" height="" border="0">
+        <img src="image/gallery06.jpg" alt="" width="" height="" border="0"> 
+    </div>
+  </div>
+</section>
+
+<!-- PLAN -->
+<section class="plan-section">
+  <div class="sec-inner">
+    <h2 class="plan-title">Plan</h2>
+    <div class="plan-cards-grid">
+
+      <!-- 洋装プラン -->
+      <div class="plan-card">
+        <div class="plan-card-img-wrap">
+          <img src="image/plan01.jpg" alt="洋装スタジオプラン">
+          <div class="plan-discount-badge">
+            <span>今だけ <em>¥20,000</em> 引き</span>
+          </div>
+        </div>
+        <div class="plan-card-body">
+          <p class="plan-card-name">洋装スタジオプラン</p>
+          <p class="plan-card-desc">植物の空間や天井高のある広いスタジオなど<br>3つのスタジオから、お好きな空間をお選びいただけます。</p>
+          <div class="plan-price-block">
+            <span class="plan-price">¥99,000<span style="font-size:14px">（税込）</span></span>
+            <span class="plan-price-original">¥119,000（税込）</span>
+            <span class="plan-discount-label">¥20,000 OFF</span>
+          </div>
+          <div class="plan-includes">
+            <div class="plan-include-item">
+              <svg class="plan-include-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-1.5 0-2.7.8-3.4 2H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2.6C14.7 3.8 13.5 3 12 3Z"/><path d="M9 12l2 2 4-4"/></svg>
+              ドレス &amp; タキシード
+            </div>
+            <div class="plan-include-item">
+              <svg class="plan-include-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>
+              新婦ヘアメイク
+            </div>
+            <div class="plan-include-item">
+              <svg class="plan-include-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 1 5 5c0 1.7-.8 3.2-2 4.2L12 22l-3-10.8A5 5 0 0 1 12 2Z"/></svg>
+              アクセサリー
+            </div>
+            <div class="plan-include-item">
+              <svg class="plan-include-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4-8-10a8 8 0 0 1 16 0c0 6-8 10-8 10Z"/></svg>
+              ブーケ・ブートニア
+            </div>
+            <div class="plan-include-item">
+              <svg class="plan-include-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3L14.5 4Z"/><circle cx="12" cy="13" r="3"/></svg>
+              撮影データ 100カット
+            </div>
+          </div>
+          <p class="plan-all-note">撮影に必要なものが全て含まれています。</p>
+          <p class="plan-note">アルバム付きプラン・ドレス1着追加無料<br>¥129,800〜¥162,800（税込）<br>＊ロケーション撮影プランもございます</p>
+        </div>
+      </div>
+
+      <!-- 和装プラン -->
+      <div class="plan-card">
+        <div class="plan-card-img-wrap">
+          <img src="image/plan02.jpg" alt="和装スタジオプラン">
+          <div class="plan-discount-badge">
+            <span>今だけ <em>¥20,000</em> 引き</span>
+          </div>
+        </div>
+        <div class="plan-card-body">
+          <p class="plan-card-name">和装スタジオプラン</p>
+          <p class="plan-card-desc">白無垢や色打掛も、落ち着いた空間の中で自然体に。<br>前撮りにも人気なプランです。</p>
+          <div class="plan-price-block">
+            <span class="plan-price">¥118,800<span style="font-size:14px">（税込）</span></span>
+            <span class="plan-price-original">¥138,800（税込）</span>
+            <span class="plan-discount-label">¥20,000 OFF</span>
+          </div>
+          <div class="plan-includes">
+            <div class="plan-include-item">
+              <svg class="plan-include-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-1.5 0-2.7.8-3.4 2H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2.6C14.7 3.8 13.5 3 12 3Z"/><path d="M9 12l2 2 4-4"/></svg>
+              新郎様 &amp; 新婦様　和装各1着
+            </div>
+            <div class="plan-include-item">
+              <svg class="plan-include-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>
+              ヘアメイク（新婦様のみ）
+            </div>
+            <div class="plan-include-item">
+              <svg class="plan-include-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 1 5 5c0 1.7-.8 3.2-2 4.2L12 22l-3-10.8A5 5 0 0 1 12 2Z"/></svg>
+              髪飾り・小物一式
+            </div>
+            <div class="plan-include-item">
+              <svg class="plan-include-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+              着付け
+            </div>
+            <div class="plan-include-item">
+              <svg class="plan-include-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3L14.5 4Z"/><circle cx="12" cy="13" r="3"/></svg>
+              撮影データ 100カット
+            </div>
+          </div>
+          <p class="plan-all-note">撮影に必要なものが全て含まれています。</p>
+          <p class="plan-note">＊和洋装プランもご用意しております ¥173,800〜（税込）</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VOICE -->
+<section class="voice-section">
+  <div class="sec-inner">
+    <h2 class="voice-title">Voice</h2>
+    <p class="voice-sub">お客様の声</p>
+    <div class="voice-grid">
+      <div class="voice-card">
+        <p class="voice-card-title">スタッフさんがとても丁寧です</p>
+        <p class="voice-card-text">結婚式は挙げず、写真だけは残したいと思い利用しました。大勢の人の前に出ることが少し苦手だったので、少人数で落ち着いて撮影できるスタジオを探していたところ、こちらを見つけました。
+観葉植物に囲まれたナチュラルな空間はとても居心地が良く、リラックスしながら撮影できたのが印象的です。スタッフの皆さんも優しく声をかけてくださり、緊張せず自然な表情で撮影に臨むことができました。
+自分たちらしい雰囲気の写真を残すことができ、特別な時間を過ごせたことにとても満足しています。結婚式はしなくても、写真だけは残したいという方にぜひおすすめしたいスタジオです。</p>
+        <p class="voice-card-from">新婦 / 22歳</p>
+      </div>
+      <div class="voice-card">
+        <p class="voice-card-title">スタジオのオシャレさが決め手</p>
+        <p class="voice-card-text">自然光がたっぷり入る明るい空間と、美しいグリーンに惹かれてこちらを選びましたが、結果として大満足の前撮りになりました。
+
+見学から撮影日まであまり時間がなく少し不安もありましたが、メールでの問い合わせにも丁寧に対応してくださり、安心して当日を迎えることができました。
+
+スタジオ内はどの背景も素敵でしたが、特にグリーンの背景は他にはない魅力があり、たくさん撮影していただけて嬉しかったです。カメラマンさんはポーズの提案や声掛けをしてくださり、緊張することなく楽しく撮影できました。ヘアメイクさんを含めスタッフの皆さんが親切で、「ここでお願いして良かった」と心から思える一日になりました。</p>
+        <p class="voice-card-from">新婦 / 32歳</p>
+      </div>
+      <div class="voice-card">
+        <p class="voice-card-title">居心地の良さがGOOD</p>
+        <p class="voice-card-text">Instagramで植物に囲まれたスタジオを見つけ、その雰囲気に惹かれて見学を予約しました。見学時のスタッフの方の対応も温かく、スタジオも想像以上に素敵だったため、安心してお願いすることができました。
+
+衣装は種類が豊富で、ドレスやタキシードを試着しながらじっくり選べたのも嬉しかったです。ヘアメイクは事前にイメージを伝えただけでしたが、想像以上に可愛く仕上げていただき、とても満足しています。
+
+撮影中はポーズを丁寧に教えてくださり、最初は緊張していたものの自然と笑顔になれました。持ち込み料がかからないため、手作りブーケやアクセサリー、趣味のギターなど思い出の品も一緒に撮影でき、大切な記念になりました。</p>
+        <p class="voice-card-from">新婦 / 29歳</p>
+      </div>
+      <div class="voice-card">
+        <p class="voice-card-title">お願いして本当に良かったです</p>
+        <p class="voice-card-text">見学した時点で「ここにしよう」と決めるほど、スタジオの雰囲気やスタッフの皆さんの対応が素敵でした。
+
+衣装はプラン内とは思えないほど種類が豊富で、試着もスムーズに対応していただけたので、ふたりで楽しみながら選ぶことができました。料金体系も分かりやすく、オプションの説明や見積もりも明確だったため、安心して準備を進められました。
+
+撮影当日はヘアメイクさんもカメラマンさんも温かく接してくださり、終始和やかな雰囲気の中でリラックスして過ごせました。空間づくりへのこだわりや細やかな気配りが感じられ、撮影そのものだけでなく、一日を通して幸せな思い出になりました。写真の仕上がりを見るのが今から楽しみです。</p>
+        <p class="voice-card-from">新婦 / 28歳</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIME SCHEDULE（新設） -->
+<section class="schedule-section">
+  <div class="sec-inner">
+    <h2 class="schedule-title">1日の流れ</h2>
+    <p class="schedule-sub">Time schedule</p>
+    <div class="schedule-steps">
+      <div class="schedule-step">
+        <div class="schedule-step-num">
+          <span>STEP</span><strong>1</strong>
+        </div>
+        <div class="schedule-step-body">
+          <p class="schedule-time">10:00〜</p>
+          <h3>ご来店</h3>
+          <p>スタジオへご来店いただきます。お着替え前に、スタジオをご案内しながら撮影の流れをご説明します。緊張しなくて大丈夫。ゆっくりお茶でも飲みながら始めましょう。</p>
+        </div>
+      </div>
+      <div class="schedule-step">
+        <div class="schedule-step-num">
+          <span>STEP</span><strong>2</strong>
+        </div>
+        <div class="schedule-step-body">
+          <p class="schedule-time">10:30〜</p>
+          <h3>新郎新婦ヘアメイク</h3>
+          <p>フェイスマッサージから始まり、ゆっくりと気持ちを整えながらヘアメイクを進めます。衣裳に合わせたスタイリングで、自然な美しさを引き出します。</p>
+        </div>
+      </div>
+      <div class="schedule-step">
+        <div class="schedule-step-num">
+          <span>STEP</span><strong>3</strong>
+        </div>
+        <div class="schedule-step-body">
+          <p class="schedule-time">12:00〜</p>
+          <h3>写真撮影開始</h3>
+          <p>いよいよ撮影です。植物と光の空間の中で、カメラマンと会話しながらリラックスして撮影を進めます。「ポーズを決める」より「ふたりでいる」時間を大切にします。</p>
+        </div>
+      </div>
+      <div class="schedule-step">
+        <div class="schedule-step-num">
+          <span>STEP</span><strong>4</strong>
+        </div>
+        <div class="schedule-step-body">
+          <p class="schedule-time">14:00〜</p>
+          <h3>終了・お会計</h3>
+          <p>撮影終了後、お着替えをして終了です。その場でデータの確認はできませんが、約30日後にお渡しする写真を楽しみにお待ちください。お支払いは現金・クレジットカードにて承ります。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="flow-section">
+  <div class="sec-inner">
+    <h2 class="flow-title">Flow</h2>
+    <p class="flow-sub">ご納品までの流れ</p>
+    <div class="flow-grid">
+
+      <!-- 1 -->
+      <div class="flow-item">
+        <span class="flow-num">1</span>
+        <!-- ▼ アイコン差し替え：src="images/flow_01.png" のパスを実際の画像に変更してください -->
+        <div class="flow-icon-wrap">
+          <img src="image/flow_01.png" alt="見学ご予約アイコン">
+        </div>
+        <div class="flow-content">
+          <h3>見学ご予約</h3>
+          <p>Web見学予約フォームよりスタジオ見学のご予約をお願いします。</p>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="flow-item">
+        <span class="flow-num">2</span>
+        <!-- ▼ アイコン差し替え：src="images/flow_02.png" のパスを実際の画像に変更してください -->
+        <div class="flow-icon-wrap">
+          <img src="image/flow_02.png" alt="スタジオ見学アイコン">
+        </div>
+        <div class="flow-content">
+          <h3>スタジオ見学</h3>
+          <p>ご要望をお聞きしてプランをご提案します。衣装のご試着もこのタイミングで行えます。</p>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="flow-item">
+        <span class="flow-num">3</span>
+        <!-- ▼ アイコン差し替え：src="images/flow_03.png" のパスを実際の画像に変更してください -->
+        <div class="flow-icon-wrap">
+          <img src="image/flow_03.png" alt="撮影予約アイコン">
+        </div>
+        <div class="flow-content">
+          <h3>撮影予約</h3>
+          <p>ご希望の撮影日をご予約ください。</p>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="flow-item">
+        <span class="flow-num">4</span>
+        <!-- ▼ アイコン差し替え：src="images/flow_04.png" のパスを実際の画像に変更してください -->
+        <div class="flow-icon-wrap">
+          <img src="image/flow_04.png" alt="撮影当日アイコン">
+        </div>
+        <div class="flow-content">
+          <h3>撮影当日</h3>
+          <p>お客様とコミュニケーションをとりながら、自然な雰囲気で撮影します。</p>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="flow-item">
+        <span class="flow-num">5</span>
+        <!-- ▼ アイコン差し替え：src="images/flow_05.png" のパスを実際の画像に変更してください -->
+        <div class="flow-icon-wrap">
+          <img src="image/flow_05.png" alt="ご精算アイコン">
+        </div>
+        <div class="flow-content">
+          <h3>ご精算</h3>
+          <p>お支払いは撮影当日にお願いいたします。（現金・クレジットカード）</p>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="flow-item">
+        <span class="flow-num">6</span>
+        <!-- ▼ アイコン差し替え：src="images/flow_06.png" のパスを実際の画像に変更してください -->
+        <div class="flow-icon-wrap">
+          <img src="image/flow_06.png" alt="ご納品アイコン">
+        </div>
+        <div class="flow-content">
+          <h3>ご納品</h3>
+          <p>データは撮影後約30日、アルバムは約50〜60日でお渡しいたします。</p>
+        </div>
+      </div>
+
+    </div><!-- /flow-grid -->
+    <p style="font-size:12px;color:var(--text-light);margin-top:32px;text-align:center;letter-spacing:0.05em">※撮影予約後、お打ち合わせをご希望の場合にはご案内も可能です。</p>
+  </div>
+</section>
+
+<!-- Q&A -->
+<section class="qa-section">
+  <div class="sec-inner">
+    <h2 class="qa-title">Q &amp; A</h2>
+    <p class="qa-sub">ご見学前によくいただく質問</p>
+    <div class="qa-item">
+      <p class="qa-q"><span>Q.</span>見学後にその場で決めないといけませんか？</p>
+      <p class="qa-a">ご見学後、その日にお決めいただく必要はありません。ご自宅でゆっくりご検討ください。</p>
+    </div>
+    <div class="qa-item">
+      <p class="qa-q"><span>Q.</span>ドレスの試着はできますか？</p>
+      <p class="qa-a">ご見学時にご試着いただけます。</p>
+    </div>
+    <div class="qa-item">
+      <p class="qa-q"><span>Q.</span>家族やペットとの撮影はできますか？</p>
+      <p class="qa-a">ご家族との撮影はもちろん、ペットとの撮影も可能です。お気軽にご相談ください。</p>
+    </div>
+    <div class="qa-item">
+      <p class="qa-q"><span>Q.</span>撮影時間はどのくらいですか？</p>
+      <p class="qa-a">スタジオ撮影は約3〜4時間です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ACCESS -->
+<section class="access-section">
+  <div class="sec-inner">
+    <h2 class="access-title">Access</h2>
+    <p class="access-sub">スタジオへのアクセス</p>
+    <p class="access-name">GREEN STUDIO（東京スタジオ）</p>
+    <p class="access-info">
+      電話番号：03-5809-8681<br>
+      〒135-0042 東京都江東区木場3-18-17-2F<br>
+      営業時間：10:00〜19:00　定休日：水曜日
+    </p>
+    <iframe
+      class="access-map"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.3!2d139.8157!3d35.6718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188973a3a3a3a3%3A0x0!2sGREEN+STUDIO!5e0!3m2!1sja!2sjp!4v1"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section">
+  <h2>植物と光の中で、<br>ふたりらしい一日を。</h2>
+  <p>まずはスタジオ見学から。<br>衣装のご試着も無料で体験いただけます。</p>
+  <a href="https://green-studio.resv.jp/" class="cta-btn" target="_blank">見学のご予約はこちら</a>
+  <a href="https://www.instagram.com/greenstudio_wedding/" class="cta-ig" target="_blank">▷ Instagram @greenstudio_wedding</a>
+</section>
+
+<footer>
+  <p>GREEN STUDIO &copy; 2026 Wedding Photo Studio in Tokyo</p>
+</footer>
+
+
+<!-- LIGHTBOX -->
+<div id="lb-overlay" role="dialog" aria-modal="true" aria-label="画像拡大表示">
+  <button id="lb-close" aria-label="閉じる">&#x2715;</button>
+  <button id="lb-prev" aria-label="前の画像">&#x2039;</button>
+  <img id="lb-img" src="" alt="">
+  <button id="lb-next" aria-label="次の画像">&#x203A;</button>
+</div>
+
+<script>
+(function(){
+  const overlay = document.getElementById('lb-overlay');
+  const lbImg   = document.getElementById('lb-img');
+  const btnClose = document.getElementById('lb-close');
+  const btnPrev  = document.getElementById('lb-prev');
+  const btnNext  = document.getElementById('lb-next');
+
+  // ギャラリー内の全img取得
+  const imgs = Array.from(document.querySelectorAll('.gallery-grid img'));
+  let current = 0;
+
+  function open(index){
+    current = index;
+    lbImg.src = imgs[current].src;
+    lbImg.alt = imgs[current].alt;
+    overlay.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    updateArrows();
+  }
+
+  function close(){
+    overlay.classList.remove('is-open');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+  }
+
+  function prev(){
+    if(current > 0){ open(current - 1); }
+  }
+
+  function next(){
+    if(current < imgs.length - 1){ open(current + 1); }
+  }
+
+  function updateArrows(){
+    btnPrev.style.display = current === 0 ? 'none' : '';
+    btnNext.style.display = current === imgs.length - 1 ? 'none' : '';
+  }
+
+  // 各画像にクリックイベント
+  imgs.forEach(function(img, i){
+    img.addEventListener('click', function(){ open(i); });
+  });
+
+  btnClose.addEventListener('click', close);
+  btnPrev.addEventListener('click', prev);
+  btnNext.addEventListener('click', next);
+
+  // オーバーレイ背景クリックで閉じる
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay) close();
+  });
+
+  // キーボード操作
+  document.addEventListener('keydown', function(e){
+    if(!overlay.classList.contains('is-open')) return;
+    if(e.key === 'Escape')      close();
+    if(e.key === 'ArrowLeft')   prev();
+    if(e.key === 'ArrowRight')  next();
+  });
+})();
+</script>
+</body>
+</html>
