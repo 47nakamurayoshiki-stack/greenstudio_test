@@ -213,10 +213,11 @@ section{padding:72px 0}
   display:block;margin-bottom:0;
 }
 .concept-dark-text{padding:48px 24px;text-align:center}
-.concept-dark-text .gs-name{
-  font-family:'EB Garamond',serif;
-  font-size:clamp(18px,5vw,24px);
-  letter-spacing:0.2em;margin-bottom:24px;opacity:0.95;
+.concept-dark-text .gs-name-logo{
+  width:200px;height:auto;
+  margin:0 auto 24px;
+  display:block;
+  opacity:0.95;
 }
 .concept-dark-text .here{
   font-size:11px;letter-spacing:0.3em;opacity:0.6;
@@ -518,6 +519,14 @@ section{padding:72px 0}
   font-size:11px;letter-spacing:0.15em;
   color:var(--green-light);margin-bottom:4px;
 }
+.schedule-step-img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:4px;
+  margin-top:14px;
+  display:block;
+}
 
 /* ── FLOW ── */
 .flow-section{background:var(--warm-white)}
@@ -589,7 +598,8 @@ section{padding:72px 0}
   letter-spacing:0.3em;text-align:center;margin-bottom:8px;
 }
 .access-sub{text-align:center;font-size:11px;letter-spacing:0.2em;opacity:0.6;margin-bottom:36px;font-family:'EB Garamond',serif}
-.access-name{font-family:'EB Garamond',serif;font-size:16px;letter-spacing:0.15em;margin-bottom:20px;opacity:0.9}
+.access-name-logo{width:200px;height:auto;margin:0 auto 12px;display:block;opacity:0.9}
+.access-name-sub{text-align:center;font-family:'EB Garamond',serif;font-size:14px;letter-spacing:0.1em;margin-bottom:20px;opacity:0.85}
 .access-info{font-size:13px;line-height:2.2;opacity:0.75;margin-bottom:28px}
 .access-map{width:100%;height:200px;border:none;filter:grayscale(0.3) contrast(0.9);display:block}
 
@@ -668,6 +678,19 @@ footer{
   /* Schedule */
   .schedule-steps::before{left:34px}
   .schedule-step-num{width:68px;height:68px}
+  .schedule-step-body{
+    display:flex;
+    align-items:flex-start;
+    gap:32px;
+    width:100%;
+  }
+  .schedule-step-text{flex:1;min-width:0}
+  .schedule-step-img{
+    width:280px;
+    height:160px;
+    flex-shrink:0;
+    margin-top:0;
+  }
 
   /* Flow — 2カラム */
   .flow-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 32px}
@@ -787,7 +810,7 @@ footer{
 <section class="story-block" style="background:var(--cream);padding:48px 0 0">
   <div class="story-item">
     <div class="story-photo full">
-       <img src="image/02.jpg"" width="" height="" border="0">  </div>
+       <img src="image/02.jpg" width="" height="" border="0">  </div>
     <p class="story-caption">西陽がきれいで</p>
   </div>
   <div class="story-item">
@@ -820,7 +843,7 @@ footer{
       <img src="image/08.jpg" alt="" width="" height="" border="0">
     </div>
     <p class="story-caption center">写真が少し苦手でも<br>
-そのままで、大丈夫です。だった</p>
+そのままで、大丈夫だった</p>
   </div>
 </section>
 <br>
@@ -831,7 +854,7 @@ footer{
 <img class="concept-item-img" src="image/09.jpg" alt="ブーケ">
    </div> 
   <div class="concept-dark-text">
-    <p class="gs-name">GREEN STUDIO</p>
+    <img src="image/logo-white.svg" alt="GREEN STUDIO" class="gs-name-logo">
     <p class="here">what we have here</p>
     <div class="concept-three">
       <span>空気</span>
@@ -887,9 +910,9 @@ footer{
        <img src="image/gallery03.jpg" alt="" width="" height="" border="0">
     </div>
     <div class="g-row3">
-       <img src="image/gallery04.jpg" alt="" width="" height="" border="0">
+       <img src="image/unnamed.jpg" alt="" width="" height="" border="0">
       <img src="image/gallery05.jpg" alt="" width="" height="" border="0">
-      <img src="image/gallery06.jpg" alt="" width="" height="" border="0"> 
+      <img src="image/unnamed (1).jpg" alt="" width="" height="" border="0"> 
     </div>
   </div>
 </section>
@@ -912,8 +935,8 @@ footer{
           <p class="plan-card-name">洋装スタジオプラン</p>
           <p class="plan-card-desc">植物の空間や天井高のある広いスタジオなど<br>3つのスタジオから、お好きな空間をお選びいただけます。</p>
           <div class="plan-price-block">
-            <span class="plan-price">¥99,000<span style="font-size:14px">（税込）</span></span>
-            <span class="plan-price-original">¥119,000（税込）</span>
+            <span class="plan-price">¥88,000<span style="font-size:14px">（税込 ¥96,800）</span></span>
+            <span class="plan-price-original">通常価格 ¥108,000</span>
             <span class="plan-discount-label">¥20,000 OFF</span>
           </div>
           <div class="plan-includes">
@@ -955,8 +978,8 @@ footer{
           <p class="plan-card-name">和装スタジオプラン</p>
           <p class="plan-card-desc">白無垢や色打掛も、落ち着いた空間の中で自然体に。<br>前撮りにも人気なプランです。</p>
           <div class="plan-price-block">
-            <span class="plan-price">¥118,800<span style="font-size:14px">（税込）</span></span>
-            <span class="plan-price-original">¥138,800（税込）</span>
+            <span class="plan-price">¥108,000<span style="font-size:14px">（税込 ¥118,800）</span></span>
+            <span class="plan-price-original">通常価格 ¥128,000</span>
             <span class="plan-discount-label">¥20,000 OFF</span>
           </div>
           <div class="plan-includes">
@@ -1050,9 +1073,13 @@ footer{
           <span>STEP</span><strong>1</strong>
         </div>
         <div class="schedule-step-body">
-          <p class="schedule-time">10:00〜</p>
-          <h3>ご来店</h3>
-          <p>スタジオへご来店いただきます。お着替え前に、スタジオをご案内しながら撮影の流れをご説明します。<br>緊張しなくて大丈夫。ゆっくりお茶でも飲みながら始めましょう。</p>
+          <div class="schedule-step-text">
+            <p class="schedule-time">10:00〜</p>
+            <h3>ご来店</h3>
+            <p>スタジオへご来店いただきます。お着替え前に、スタジオをご案内しながら撮影の流れをご説明します。<br>緊張しなくて大丈夫。ゆっくりお茶でも飲みながら始めましょう。</p>
+          </div>
+          <!-- ▼ 画像差し替え：横型イメージ画像をご用意ください -->
+          <img src="image/sec01.jpg" alt="ご来店" class="schedule-step-img">
         </div>
       </div>
       <div class="schedule-step">
@@ -1060,9 +1087,13 @@ footer{
           <span>STEP</span><strong>2</strong>
         </div>
         <div class="schedule-step-body">
-          <p class="schedule-time">10:30〜</p>
-          <h3>新郎新婦ヘアメイク</h3>
-          <p>フェイスマッサージから始まり、ゆっくりと気持ちを整えながらヘアメイクを進めます。<br>衣裳に合わせたスタイリングで、自然な美しさを引き出します。</p>
+          <div class="schedule-step-text">
+            <p class="schedule-time">10:30〜</p>
+            <h3>新婦ヘアメイク</h3>
+            <p>フェイスマッサージから始まり、ゆっくりと気持ちを整えながらヘアメイクを進めます。<br>衣裳に合わせたスタイリングで、自然な美しさを引き出します。</p>
+          </div>
+          <!-- ▼ 画像差し替え：横型イメージ画像をご用意ください -->
+          <img src="image/sec02.jpg" alt="新婦ヘアメイク" class="schedule-step-img">
         </div>
       </div>
       <div class="schedule-step">
@@ -1070,9 +1101,13 @@ footer{
           <span>STEP</span><strong>3</strong>
         </div>
         <div class="schedule-step-body">
-          <p class="schedule-time">12:00〜</p>
-          <h3>写真撮影開始</h3>
-          <p>いよいよ撮影です。<br>植物と光の空間の中で、カメラマンと会話しながらリラックスして撮影を進めます。<br>「ポーズを決める」より「ふたりでいる」時間を大切にします。</p>
+          <div class="schedule-step-text">
+            <p class="schedule-time">12:00〜</p>
+            <h3>写真撮影開始</h3>
+            <p>いよいよ撮影です。<br>植物と光の空間の中で、カメラマンと会話しながらリラックスして撮影を進めます。<br>「ポーズを決める」より「ふたりでいる」時間を大切にします。</p>
+          </div>
+          <!-- ▼ 画像差し替え：横型イメージ画像をご用意ください -->
+          <img src="image/sec03.jpg" alt="写真撮影開始" class="schedule-step-img">
         </div>
       </div>
       <div class="schedule-step">
@@ -1080,9 +1115,13 @@ footer{
           <span>STEP</span><strong>4</strong>
         </div>
         <div class="schedule-step-body">
-          <p class="schedule-time">14:00〜</p>
-          <h3>終了・お会計</h3>
-          <p>撮影終了後、お着替えをして終了です。<br>その場でデータの確認はできませんが、約30日後にお渡しする写真を楽しみにお待ちください。<br>お支払いは現金・クレジットカードにて承ります。</p>
+          <div class="schedule-step-text">
+            <p class="schedule-time">14:00〜</p>
+            <h3>終了・お会計</h3>
+            <p>撮影終了後、お着替えをして終了です。<br>その場でデータの確認はできませんが、約30日後にお渡しする写真を楽しみにお待ちください。<br>お支払いは現金・クレジットカードにて承ります。</p>
+          </div>
+          <!-- ▼ 画像差し替え：横型イメージ画像をご用意ください -->
+          <img src="image/sec04.jpg" alt="終了・お会計" class="schedule-step-img">
         </div>
       </div>
     </div>
@@ -1208,7 +1247,8 @@ footer{
   <div class="sec-inner">
     <h2 class="access-title">Access</h2>
     <p class="access-sub">スタジオへのアクセス</p>
-    <p class="access-name">GREEN STUDIO（東京スタジオ）</p>
+    <img src="image/logo-white.svg" alt="GREEN STUDIO" class="access-name-logo">
+    <p class="access-name-sub">（東京スタジオ）</p>
     <p class="access-info">
       電話番号：03-5809-8681<br>
       〒135-0042 東京都江東区木場3-18-17-2F<br>
